@@ -1,0 +1,11 @@
+Today's date is :04/15/21 17:06:46Current time :17:06:22
+Exit Time :17:06:25
+Current time :17:06:28
+Exit Time :17:06:34
+Current time :17:06:39
+Exit Time :17:06:44
+Today's date is :04/15/21 17:07:20
+Current time :17:07:15
+Exit Time :17:07:16
+Current time :17:07:17
+Exit Time :17:07:18
