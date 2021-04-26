@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 import LED
 from motor import SetAngle
 
-bind_ip = "192.168.50.115"
+bind_ip = "192.168.137.28"
 bind_port = 8888
 
 server = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -22,9 +22,10 @@ for i in light :
 
 
 try:
-    client , addr = server.accept()
-    print("Accepted connection from: %s:%d" % (addr[0],addr[1]))
     while True:
+        client , addr = server.accept()
+        print(client)
+        print("Accepted connection from: %s:%d" % (addr[0],addr[1]))
         print('start')
         data = client.recv(1024)
         print('stop')
@@ -49,6 +50,7 @@ try:
             else :
                 LED.TurnOnLED(light['yellow'])
                 SetAngle(180)
+
         client.sendall(data)
 
 except KeyboardInterrupt:
