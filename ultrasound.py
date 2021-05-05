@@ -4,8 +4,8 @@ import time
 
 GPIO.setmode(GPIO.BCM)
 
-GPIO_TRIGGER = 7
-GPIO_ECHO = 12
+GPIO_TRIGGER = 18
+GPIO_ECHO = 15
 
 GPIO.setup(GPIO_TRIGGER,GPIO.OUT)
 GPIO.setup(GPIO_ECHO,GPIO.IN)
@@ -67,6 +67,7 @@ if __name__ == '__main__':
 			time.sleep(1)
 			
 	except KeyboardInterrupt:
+		GPIO.cleanup
 		print('Measure stopped by user')
 		GPIO.cleanup
 			

@@ -21,8 +21,12 @@ try:
     data = client.recv(1024)
     print('stop')
     if data == b'water':
-        print("hello world")
+        SetAngle(180)
+        time.sleep(5)
+        SetAngle(0)
+        time.sleep(1)
     client.sendall(data)
 
 except KeyboardInterrupt:
     server.close()
+    GPIO.cleanup()
