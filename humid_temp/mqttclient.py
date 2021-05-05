@@ -1,26 +1,28 @@
 #!/usr/bin/env python
-#coding:utf-8   
+# coding:utf-8
 
 import paho.mqtt.client as mqtt
-            
+
 
 # 當地端程式連線伺服器得到回應時，要做的動作
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
 
     # 將訂閱主題寫在on_connet中
-    # 如果我們失去連線或重新連線時 
+    # 如果我們失去連線或重新連線時
     # 地端程式將會重新訂閱
     client.subscribe("action/water")
     client.subscribe("humid_temp/value")
-    #client.subsribe("action/xxx") maybe other action can be used?
+    # client.subsribe("action/xxx") maybe other action can be used?
 
 # 當接收到從伺服器發送的訊息時要進行的動作
+
+
 def on_message(client, userdata, msg):
     # msg.payload = 收到的訊息
-   if msg.payload == "water":
-       print("watering plant")
-       #若得到water則澆水邏輯
+    if msg.payload == "water":
+        print("watering plant")
+        # 若得到water則澆水邏輯
 
 
 # 連線設定
